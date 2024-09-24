@@ -130,7 +130,8 @@ public class MainLayout extends AppLayout {
 
             layout.add(userMenu);
         } else {
-            Anchor loginLink = new Anchor("login", "Sign in");
+            Anchor loginLink = new Anchor(authenticatedUser.login(), "Sign in");
+            loginLink.getElement().setAttribute("router-ignore", true);
             layout.add(loginLink);
         }
 
